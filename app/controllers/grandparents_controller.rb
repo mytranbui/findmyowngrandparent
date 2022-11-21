@@ -1,7 +1,7 @@
 class GrandparentsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_grandparent, only: %i[show edit update destroy]
-  before_action :set_user, only: %i[new create]
+  # before_action :set_user, only: %i[new create]
 
   # GET /grandparent
   def index
@@ -15,12 +15,13 @@ class GrandparentsController < ApplicationController
   # GET /grandparents/new
   def new
     @grandparent = Grandparent.new
+    @grandparent.user = current_user
   end
 
   # POST "grandparents"
   def create
     @grandparent = Grandparent.new(grandparent_params)
-    @grandparent.user = @user
+    @grandparent.user = current_user
     if @grandparent.save
       redirect_to grandparent_path(@grandparent)
     else
@@ -50,10 +51,6 @@ class GrandparentsController < ApplicationController
   end
 
   private
-
-  def set_user
-    @user = User.find(params[:user_id])
-  end
 
   def set_grandparent
     @grandparent = Grandparent.find(params[:id])
