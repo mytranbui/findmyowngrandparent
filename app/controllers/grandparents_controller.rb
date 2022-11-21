@@ -1,4 +1,5 @@
 class GrandparentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_grandparent, only: %i[show edit update destroy]
   before_action :set_user, only: %i[new create]
 
