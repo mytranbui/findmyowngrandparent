@@ -1,0 +1,10 @@
+<h1>Grandparents</h1>
+<ul class="container">
+  <% @grandparents.each do |flat| %>
+    <li>
+      <h2 class="me-3">Name: <%= grandparent.name %> </h2>
+      <p>age: <%= grandparent.age %> </p>
+     <img src="<%= grandparent.imageUrl %>" alt="img" width="50" height="50">
+    </li>
+  <% end %>
+ </ul>
