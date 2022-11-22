@@ -1,5 +1,8 @@
 <h2>index.html.erb</h2>
 
 <% @bookings.each do |booking| %>
-  <h2><%= booking %></h2>
+  <h2><%= booking.grandparents_id %></h2>
+  <h2><%= booking.user_id %></h2>
+  <h2><%= booking.start_date %></h2>
+  <h2><%= booking.end_date %></h2>
 <% end %>
