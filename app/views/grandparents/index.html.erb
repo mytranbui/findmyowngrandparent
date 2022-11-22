@@ -1,13 +1,16 @@
 
-<h1>Grandparents</h1>
-
-<ul class="container">
-  <% @grandparents.each do |grandparent| %>
-    <li>
+<%# <h1>Grandparents</h1> %>
+<div class="container">
+  <h1>The Grandparents</h1>
+  <div class="cards">
+    <% @grandparents.each do |grandparent|%>
+    <%# <%= cl_image_tag grandparent.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg)">
       <h2 class="me-3"> <%= grandparent.name %> </h2>
-      <p>age: <%= grandparent.age %> </p>
-      <%= link_to "See more", grandparent_path(grandparent)%>
-     <%# <img src="<%= grandparent.imageUrl" alt="img" width="50" height="50"> %>
-    </li>
-  <% end %>
- </ul>
+      <h3><%= grandparent.age %> yrs old</h3>
+
+    <%= link_to "See more", grandparent_path(grandparent)%>
+    <%# <div class="red-text"><%= link_to "Remove",booking_path(booking),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></div>
+    </div>
+    <% end %>
+  </div>
