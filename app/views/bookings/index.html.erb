@@ -9,6 +9,11 @@
         <br>
         <h2>from: <%= booking.start_date %></h2>
         <h2>till: <%= booking.end_date %></h2>
+        <%=
+          link_to "Delete",
+          booking_path(booking),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
       </div>
     </div>
   <% end %>
