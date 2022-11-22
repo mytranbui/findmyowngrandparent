@@ -16,10 +16,12 @@ Grandparent.destroy_all
 # movies_serialized = URI.open(url).read
 # movies = JSON.parse(movies_serialized)
 
-puts "Creating grandparents..."
+test_user = User.create!(email: "test@gmail.com", password: "123456")
 
-100.times do
-  Grandparent.create(name: Faker::Name.name, description: Faker::TvShows::BreakingBad.episode, age: Faker::Number.number(digits: 3), user_id:1)
+puts "Creating grandparents..."
+10.times do
+  Grandparent.create!(name: Faker::Name.name, description: Faker::TvShows::BreakingBad.episode,
+    age: Faker::Number.number(digits: 3), user: test_user)
 end
 
 puts "Seeding Finished!"
