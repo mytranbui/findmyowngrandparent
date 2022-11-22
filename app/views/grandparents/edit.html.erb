@@ -1,6 +1,8 @@
-<%= simple_form_for(grandparent) do |f| %>
+<div class="container mt-5">
+<%= simple_form_for(@grandparent) do |f| %>
   <%= f.input :name %>
   <%= f.input :age %>
   <%= f.input :description %>
   <%= f.submit %>
 <% end %>
+</div>

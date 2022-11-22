@@ -45,7 +45,6 @@ class GrandparentsController < ApplicationController
 
   # DELETE "grandparents/:id"
   def destroy
-    @grandparent = Grandparent.find(params[:id])
     @grandparent.destroy
     redirect_to grandparent_path(@grandparent.grandparent), status: :see_other
   end
