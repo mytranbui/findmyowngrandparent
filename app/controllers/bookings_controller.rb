@@ -1,10 +1,10 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_grandparent, only: %i[new create destroy]
+  before_action :set_grandparent, only: %i[new create]
 
-  # GET grandparents/:id/bookings
+  # GET /bookings
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
   end
 
    # GET "grandparents/:id/bookings/new"
@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to grandparent_path(@booking.grandparent), status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 
   private
