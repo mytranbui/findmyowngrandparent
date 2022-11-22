@@ -10,15 +10,14 @@ class BookingsController < ApplicationController
    # GET "grandparents/:id/bookings/new"
   def new
     @booking = Booking.new
-    @booking.grandparent.user = current_user
   end
 
   # POST "grandparents/:id/bookings"
   def create
     @booking = Booking.new(booking_params)
     @booking.grandparent = @grandparent
-    @booking.grandparent.user = current_user
-    if @booking.save
+    @booking.user = current_user
+    if @booking.save!
       redirect_to grandparent_path(@grandparent)
     else
       render :new, status: :unprocessable_entity
