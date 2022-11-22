@@ -1,8 +1,15 @@
-<h2>index.html.erb</h2>
-
-<% @bookings.each do |booking| %>
-  <h2><%= booking.grandparents_id %></h2>
-  <h2><%= booking.user_id %></h2>
-  <h2><%= booking.start_date %></h2>
-  <h2><%= booking.end_date %></h2>
-<% end %>
+<%# <h2>index.html.erb</h2> %>
+<div class="container m-5">
+  <% @bookings.each do |booking| %>
+    <div class="card-product m-5">
+      <img src="https://cdn.pixabay.com/photo/2015/11/11/06/48/grandma-1038239_960_720.png" />
+      <div class="card-product-infos">
+        <h2>User: <%= booking.user.email %></h2>
+        <h2>Grandparents: <%= booking.grandparent.name %></h2>
+        <br>
+        <h2>from: <%= booking.start_date %></h2>
+        <h2>till: <%= booking.end_date %></h2>
+      </div>
+    </div>
+  <% end %>
+</div>
