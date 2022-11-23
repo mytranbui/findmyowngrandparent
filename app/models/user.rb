@@ -9,6 +9,4 @@ class User < ApplicationRecord
   # many-to-many
   has_many :bookings, dependent: :destroy
   has_many :grandparents, through: :bookings, dependent: :destroy
-
-  # validates email, uniqueness: true, presence: true
 end
