@@ -12,9 +12,7 @@
             <h2><%= grandparent.age %> years old</h2>
             <br>
             <h2><%= link_to "See more", grandparent_path(grandparent)%></h2>
-        <% if grandparent.user == current_user %>
             <h2><%= link_to "Book", new_grandparent_booking_path(grandparent)%></h2>
-        <% end %>
           </div>
         </div>
       <% end %>
