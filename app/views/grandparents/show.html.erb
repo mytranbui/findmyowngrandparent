@@ -14,11 +14,16 @@
 <%= link_to " Book", new_grandparent_booking_path(@grandparent), :class => "btn btn-inverse fas fa-heart"%>
 <% end %>
 <br>
+<p> <em>see other gramps and grannys:</em> </p>
+<%= link_to "Display all", grandparents_path, :class => "btn btn-inverse" %>
+<br>
+<%= link_to "You can see your bookings here", bookings_path(@booking), :class => "btn btn-inverse" %>
+<br>
 <br>
 <% if @grandparent.user == current_user %>
-<%= link_to "Destroy", grandparent_path(@grandparent),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger" %> /
-<%= link_to "Edit", edit_grandparent_path, :class => "btn btn-warning" %>
+ <%= link_to "Destroy", grandparent_path(@grandparent),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger" %> /
+ <%= link_to "Edit", edit_grandparent_path, :class => "btn btn-warning" %>
 <% end %>
 <br>
-<%= link_to "See other Grannies and Grampies", grandparents_path, :class => "btn btn-inverse" %>
+<%= link_to "Back to Home", root_path, :class => "btn btn-inverse" %>
 </div>
