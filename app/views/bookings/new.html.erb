@@ -1,10 +1,12 @@
-<div id="formbg">
-  <div class="container-lg bg-primary bookingform ">
-  <h1>New booking</h1>
-    <%= simple_form_for [@grandparent, @booking] do |f| %>
-      <%= f.input :start_date, as: :date, html5: true %>
-      <%= f.input :end_date, as: :date, html5: true %>
-      <%= f.submit "Create Booking", class: "btn bookingform-button" %>
-    <% end %>
+<div id="formbg" class = "d-flex justify-content-center align-items-center">
+<%# <div class ="container d-flex justify-content-center align-items-center"> %>
+  <div class="container-lg .bg-light bookingform d-flex flex-column justify-content-center">
+    <h1 class = "date_box">New booking</h1>
+      <%= simple_form_for [@grandparent, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.submit "Create Booking", class: "btn bookingform-button" %>
+      <% end %>
   </div>
+  <%# </div> %>
 </div>
