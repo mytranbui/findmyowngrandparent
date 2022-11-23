@@ -11,9 +11,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <%# <li class="nav-item active"> %>
-            <%# <%= link_to "Home", "#", class: "nav-link" %>
-          <%# </li> %>
+          <li class="nav-item active">
+            <%= link_to current_user.email, "/dashboard", class: "nav-link" %>
+          </li>
           <%# <li class="nav-item"> %>
             <%# <%= link_to "Messages", "#", class: "nav-link" %>
           <%# </li> %>
@@ -23,7 +23,7 @@
               <% if user_signed_in? %>
               <%= link_to "Add a nana/papa", "/grandparents/new", class: "dropdown-item" %>
               <% end %>
-              <%= link_to "My Nanas and Papas", "/grandparents", class: "dropdown-item" %>
+              <%= link_to "My profile", "/dashboard", class: "dropdown-item" %>
               <%= link_to "My bookings", "/bookings", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
