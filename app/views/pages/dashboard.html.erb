@@ -1,3 +1,17 @@
 <div>
-  <%= current_user.email %>
+  <div>
+    <h1><%= current_user.email.split("@")[0] %></h1>
+  </div>
+  <div>
+    <% current_user.grandparents.each do |gp| %>
+      <%= gp.name %>
+      <%= gp.age %>
+      <%= gp.description %>
+      <% gp.bookings do |bk| %>
+        <%= bk.start_date %>
+        <%= bk.end_date %>
+        <%= bk.user.email %>
+      <% end %>
+    <% end %>
+  </div>
 </div>

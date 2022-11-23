@@ -5,7 +5,8 @@
       <%= simple_form_for [@grandparent, @booking] do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-        <%= f.submit "Create Booking", class: "btn bookingform-button" %>
+        <%= f.submit "Create Booking", class: "btn bookingform-button"%>
+        <a class="btn btn-ghost clickbutton" href="/grandparents"> Go Back!</a>
       <% end %>
   </div>
   <%# </div> %>

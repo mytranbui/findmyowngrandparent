@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.grandparent = @grandparent
     @booking.user = current_user
     if @booking.save!
-      redirect_to grandparent_path(@grandparent)
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
