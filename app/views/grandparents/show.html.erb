@@ -3,19 +3,23 @@
 <br>
   <label class="form-control">
     <p>AGE:<%= @grandparent.age %> </p>
-    <p>DESCRIPTION:<%= @grandparent.description %> </p>
+    <p> DESCRIPTION:<%= @grandparent.description %> </p>
 <%# <div class="red-text"><%= link_to "Remove",bookmark_path(bookmark),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}</div> %>
   </label>
-<p><%= "Do you want to make #{@grandparent.name} your temporary family?" %> </p>
+<p><%= "Do you want to book #{@grandparent.name}?" %> </p>
 <br>
-<%= link_to "Check availability", 'https://calendar.google.com/calendar/embed?src=59c8ed8b3d30fc3314ff6d87fb4bd398bca3a62775cfd0c421184c1b412b6a63%40group.calendar.google.com&ctz=Asia%2FTbilisi" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"'%>
+<p> Then </p>
+<%= link_to " Book", new_grandparent_booking_path(@grandparent), :class => "btn btn-inverse fas fa-heart"%>
+<%# <%= link_to "Check availability", 'https://calendar.google.com/calendar/embed?src=59c8ed8b3d30fc3314ff6d87fb4bd398bca3a62775cfd0c421184c1b412b6a63%40group.calendar.google.com&ctz=Asia%2FTbilisi" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"'%>
 <br>
-<%= link_to "Back Home", grandparents_path %>
+<p> OR <em>see other gramps and grannys:</em></p>
+<%= link_to "Display all", grandparent_bookings_path(@grandparent), :class => "btn btn-inverse" %>
+<br>
 <br>
 <% if @grandparent.user == current_user %>
-<%= link_to "Destroy", grandparent_path(@grandparent),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> /
-<%= link_to "Edit", edit_grandparent_path %>
-
+<%= link_to "Destroy", grandparent_path(@grandparent),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger" %> /
+<%= link_to "Edit", edit_grandparent_path, :class => "btn btn-warning" %>
 <% end %>
-
+<br>
+<%= link_to "Back Home", grandparents_path, :class => "btn btn-inverse" %>
 </div>
