@@ -7,13 +7,13 @@
   <div class="row justify-content-between col-6">
     <h2>My booked Grandparents</h2>
       <% current_user.grandparents.each do |grandparent|%>
-        <div class="card-product mt-5 col-lg-6">
+        <div class="card-bookings mt-5 col-lg-6">
           <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
-          <div class="card-product-infos">
+          <div class="card-bookings-infos">
             <h2>Name: <%= grandparent.name %></h2>
             <h2>Age: <%= grandparent.age %></h2>
             <h2>Description: <%= grandparent.description %></h2>
-            <h2>Date: <%= grandparent.description %></h2>
+            <%# <h2>Date: <%= grandparent.description %>
             <br>
           </div>
         </div>
@@ -22,9 +22,9 @@
   <div class="row justify-content-between col-6">
     <h2>My created Grandparents</h2>
       <% @my_grandparents.each do |grandparent|%>
-        <div class="card-product mt-5 col-lg-6">
+        <div class="card-bookings mt-5 col-lg-6">
           <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
-          <div class="card-product-infos">
+          <div class="card-bookings-infos">
             <h2>Name: <%= grandparent.name %></h2>
             <h2>Age: <%= grandparent.age %></h2>
             <h2>Description: <%= grandparent.description %></h2>
