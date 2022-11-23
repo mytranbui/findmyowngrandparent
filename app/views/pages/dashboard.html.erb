@@ -3,7 +3,7 @@
     <h1><%= current_user.email %></h1>
   </div>
   <div>
-    <% current_user.grandparents do |gp| %>
+    <% current_user.grandparents.each do |gp| %>
       <%= gp.name %>
       <%= gp.age %>
       <%= gp.description %>
