@@ -1,9 +1,9 @@
 <div class="container m-5">
 <h2>My bookings</h2>
   <% current_user.bookings.each do |booking| %>
-    <div class="card-product m-5">
+    <div class="card-bookings m-5">
       <img src="https://cdn.pixabay.com/photo/2015/11/11/06/48/grandma-1038239_960_720.png" />
-      <div class="card-product-infos">
+      <div class="card-bookings-infos">
         <h2>User: <%= booking.user.email %></h2>
         <h2>Grandparents: <%= booking.grandparent.name %></h2>
         <br>

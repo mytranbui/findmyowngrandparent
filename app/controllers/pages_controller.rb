@@ -14,5 +14,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @my_grandparents = Grandparent.where(user_id: current_user)
   end
 end
