@@ -11,6 +11,7 @@ require "faker"
 
 puts "Cleaning database..."
 Grandparent.destroy_all
+User.destroy_all
 
 # url = "https://tmdb.lewagon.com/movie/top_rated"
 # movies_serialized = URI.open(url).read
@@ -19,8 +20,8 @@ Grandparent.destroy_all
 test_user = User.create!(email: "test@gmail.com", password: "123456")
 
 puts "Creating grandparents..."
-10.times do
-  Grandparent.create!(name: Faker::Name.name, description: Faker::TvShows::BreakingBad.episode, age: rand(60..150), user: test_user)
+30.times do
+  Grandparent.create!(name: Faker::Name.name, description: Faker::TvShows::BreakingBad.episode, age: rand(60..85), user: test_user)
 end
 
 puts "Seeding Finished!"

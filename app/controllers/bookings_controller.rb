@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_grandparent, only: %i[new create]
+  before_action :set_booking, only: %i[edit update]
 
   # GET /bookings
   def index
@@ -18,7 +19,20 @@ class BookingsController < ApplicationController
     @booking.grandparent = @grandparent
     @booking.user = current_user
     if @booking.save!
-      redirect_to bookings_path
+      redirect_to bookings_path(current_user)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+  end
+
+  # PATH /grandparents/:id
+  def update
+    @booking.update(booking_params)
+    if @booking.save
+      redirect_to bookings_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,6 +49,10 @@ class BookingsController < ApplicationController
 
   def set_grandparent
     @grandparent = Grandparent.find(params[:grandparent_id])
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params
