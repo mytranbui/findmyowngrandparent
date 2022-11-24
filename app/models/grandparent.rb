@@ -1,4 +1,5 @@
 class Grandparent < ApplicationRecord
+  has_one_attached :photo
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   # one-to-many
@@ -8,5 +9,5 @@ class Grandparent < ApplicationRecord
   has_many :users, through: :bookings, dependent: :destroy
 
   validates :name, :age, :description, presence: true
-  validates :age, numericality: { greater_than_or_equal_to: 65, only_integer: true }
+  validates :age, numericality: { only_integer: true }
 end

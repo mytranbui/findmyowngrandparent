@@ -1,7 +1,12 @@
 <div class="container mt-5">
+
 <h2><%= @grandparent.name %></h2>
 <br>
+
   <label class="form-control">
+    <div>
+      <%= cl_image_tag @grandparent.photo.key, height: 400, width: 400, crop: :fill %>
+    </div>
     <p>AGE:<%= @grandparent.age %> </p>
     <p> DESCRIPTION:<%= @grandparent.description %> </p>
     <p> ADDRESS:<%= @grandparent.address %> </p>
