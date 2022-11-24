@@ -4,16 +4,20 @@
       <% @grandparents.each do |grandparent|%>
         <%# <% if grandparent.user == current_user %>
         <div class="card-grandparents col-6 mt-5">
+        <% if grandparent.photo.present? %>
+          <%= cl_image_tag grandparent.photo.key, height: 400, width: 400, crop: :fill %>
+        <% else %>
           <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
+        <% end %>
           <div class="card-grandparents-infos">
             <h2>Name: <%= grandparent.name %></h2>
             <h2>Age: <%= grandparent.age %> years old</h2>
             <h2>Description: <%= grandparent.description %></h2>
             <h2>Address: <%= grandparent.address %></h2>
             <br>
-            <%= link_to "See more", grandparent_path(grandparent), class: "clickbutton-grandparens-index", style: "text-decoration: none" %>
+            <%= link_to "See more", grandparent_path(grandparent), class: "clickbutton-grandparents-index", style: "text-decoration: none" %>
             <br>
-            <%= link_to "Book", new_grandparent_booking_path(grandparent), class: "clickbutton-grandparens-index", style: "text-decoration: none" %>
+            <%= link_to "Book", new_grandparent_booking_path(grandparent), class: "clickbutton-grandparents-index", style: "text-decoration: none" %>
           </div>
         </div>
       <% end %>
