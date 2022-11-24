@@ -34,7 +34,8 @@ grandparents_descriptions = ["Great hand of cooking, funny and friendly.", \
   "Love nature mostly, sea is the favorite spot to visit. Love pets and spending time together."]
 puts "Creating grandparents..."
 30.times do
-  file = URI.open("https://source.unsplash.com/random/?grandparent")
+  query = ["grandma", "grandpa", "senior"].sample
+  file = URI.open("https://source.unsplash.com/random/?#{query}")
   grandparent = Grandparent.new(name: Faker::Name.name, description: grandparents_descriptions.sample, age: rand(60..85), address: Faker::Address.street_address, user: test_user)
   grandparent.photo.attach(io: file, filename: "#{grandparent.name}.png", content_type: "image/png")
   grandparent.save
