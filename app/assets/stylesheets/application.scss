@@ -13,6 +13,8 @@
 @import "pages/index";
 @import "pages/bookingsnew";
 @import "pages/booking_index";
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
+
 .card-category {
   background-size: cover;
   background-position: center;
