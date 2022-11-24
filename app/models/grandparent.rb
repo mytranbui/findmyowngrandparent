@@ -8,6 +8,6 @@ class Grandparent < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :users, through: :bookings, dependent: :destroy
 
-  validates :name, :age, :description, :photo, presence: true
-  validates :age, numericality: { greater_than_or_equal_to: 65, only_integer: true }
+  validates :name, :age, :description, presence: true
+  validates :age, numericality: { only_integer: true }
 end
