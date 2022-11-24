@@ -8,6 +8,7 @@
 # require "json"
 # require "open-uri"
 require "faker"
+require "open-uri"
 
 puts "Cleaning database..."
 Grandparent.destroy_all
@@ -16,6 +17,7 @@ User.destroy_all
 # url = "https://tmdb.lewagon.com/movie/top_rated"
 # movies_serialized = URI.open(url).read
 # movies = JSON.parse(movies_serialized)
+
 
 
 test_user = User.create!(email: "test@gmail.com", password: "123456")
@@ -32,7 +34,10 @@ grandparents_descriptions = ["Great hand of cooking, funny and friendly.", \
   "Love nature mostly, sea is the favorite spot to visit. Love pets and spending time together."]
 puts "Creating grandparents..."
 30.times do
-  Grandparent.create!(name: Faker::Name.name, description: grandparents_descriptions.sample, age: rand(60..85), address: Faker::Address.street_address, user: test_user)
+  file = URI.open("https://source.unsplash.com/random/?grandparent")
+  grandparent = Grandparent.new(name: Faker::Name.name, description: grandparents_descriptions.sample, age: rand(60..85), address: Faker::Address.street_address, user: test_user)
+  grandparent.photo.attach(io: file, filename: "#{grandparent.name}.png", content_type: "image/png")
+  grandparent.save
 end
 
 puts "Seeding Finished!"
