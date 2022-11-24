@@ -17,11 +17,22 @@ User.destroy_all
 # movies_serialized = URI.open(url).read
 # movies = JSON.parse(movies_serialized)
 
+
 test_user = User.create!(email: "test@gmail.com", password: "123456")
 
+grandparents_descriptions = ["Great hand of cooking, funny and friendly.", \
+  "Good in baking tasty cakes, has a huge stock of goodnight stories.", \
+  "Can make tasty and spicy foods, likes to go for jogging in afternoon.", \
+  "Good in making different fries, good in communication and open-mided.", \
+  "Always like to go for a trip with car, love to explore nature.", \
+  "Like to read books and tell stories, foodlover and love to taste new foods.",\
+  "Will take you for ride with his car for sure! Make you taste good food and visit new places where you were not before!", \
+  "Good in making different kind of new drinks. Like to spend time and have a good conversation with new people.", \
+  "Party guy! Loves to go for parties, dance and making new friends. Never feel bore!", \
+  "Love nature mostly, sea is the favorite spot to visit. Love pets and spending time together."]
 puts "Creating grandparents..."
 30.times do
-  Grandparent.create!(name: Faker::Name.name, description: Faker::GreekPhilosophers.quote, age: rand(60..85), user: test_user)
+  Grandparent.create!(name: Faker::Name.name, description: grandparents_descriptions.sample, age: rand(60..85), address: Faker::Address.street_address, user: test_user)
 end
 
 puts "Seeding Finished!"
