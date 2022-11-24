@@ -4,11 +4,11 @@
 <br>
 
   <label class="form-control">
-    <p>AGE:<%= @grandparent.age %> </p>
-    <p> DESCRIPTION:<%= @grandparent.description %> </p>
     <div>
       <%= cl_image_tag @grandparent.photo.key, height: 400, width: 400, crop: :fill %>
     </div>
+    <p>AGE:<%= @grandparent.age %> </p>
+    <p> DESCRIPTION:<%= @grandparent.description %> </p>
     <p> ADDRESS:<%= @grandparent.address %> </p>
 <%# <div class="red-text"><%= link_to "Remove",bookmark_path(bookmark),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}</div> %>
   </label>
