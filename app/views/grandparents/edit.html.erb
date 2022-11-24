@@ -1,9 +1,4 @@
+<h2>Update Grandparents</h2>
 <div class="container mt-5">
-<%= simple_form_for(@grandparent) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.submit %>
-<% end %>
+<%= render "form", grandparent: @grandparent %>
 </div>
