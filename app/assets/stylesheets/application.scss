@@ -13,26 +13,7 @@
 @import "pages/index";
 @import "pages/bookingsnew";
 @import "pages/booking_index";
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 500px;
-  display: flex;
-  justify-content: start;
-  align-items: flex-start;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  // border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -67,4 +48,25 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+.clickbutton-grandparens-index {
+    margin: 5px;
+    color: black !important;
+    background-color: #d0d0f7;
+    border: 1px solid blue;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px blue;
+    display: inline-block;
+    width: 70%;
+    padding: 5px;
+    text-align: center;
+    a {
+      text-decoration: none !important;
+    }
+}
+
+.clickbutton-grandparens-index:hover {
+  background-color: green;
+  color: white !important;
 }
