@@ -77,4 +77,6 @@ group :test do
 end
 gem "devise"
 gem "faker"
-gem "simple_form", github: "heartcombo/simple_form"
+
+gem "cloudinary"
+
