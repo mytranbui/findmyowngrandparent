@@ -6,6 +6,20 @@ class GrandparentsController < ApplicationController
   # GET /grandparent
   def index
     @grandparents = Grandparent.all
+    # The `geocoded` scope filters only grandparents with coordinates
+    # @markers = @grandparents.geocoded.map do |grandparent|
+    #   {
+    #     lat: grandparent.latitude,
+    #     lng: grandparent.longitude
+    #   }
+    # end
+    @markers = @grandparents.geocoded.map do |grandparent|
+      {
+        lat: grandparent.latitude,
+        lng: grandparent.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {grandparent: grandparent})
+      }
+    end
   end
 
   # GET /grandparents/:id
@@ -56,6 +70,6 @@ class GrandparentsController < ApplicationController
   end
 
   def grandparent_params
-    params.require(:grandparent).permit(:name, :photo, :description, :age)
+    params.require(:grandparent).permit(:name, :photo, :description, :age, :address, :longitude, :latitude)
   end
 end

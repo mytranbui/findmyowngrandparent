@@ -29,7 +29,7 @@
 }
 
 .clickbutton{
-  font-family: cursive;
+  // font-family: cursive;
   margin: 5px;
   width: 200px;
   color: black !important;
@@ -40,10 +40,21 @@
   display:inline-block;
 }
 
+.clickbutton:hover {
+  background-color:green !important ;
+  color: white !important;
+}
+
 
 .clickbuttoncontainer{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 300px;
+}
+
+#homebg{
+  background-image: url("https://img.freepik.com/free-photo/dreamy-thoughtful-elderly-european-woman-keeps-lips-rounded-looks-aside-thinks-about-something-pleasant-dressed-fashionable-clothes_273609-50096.jpg?w=2000");
+  background-size: cover;
+  height: 100vh;
 }
