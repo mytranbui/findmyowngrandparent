@@ -21,7 +21,7 @@ test_user = User.create!(email: "test@gmail.com", password: "123456")
 
 puts "Creating grandparents..."
 30.times do
-  Grandparent.create!(name: Faker::Name.name, description: Faker::TvShows::BreakingBad.episode, age: rand(60..85), user: test_user)
+  Grandparent.create!(name: Faker::Name.name, description: Faker::GreekPhilosophers.quote, age: rand(60..85), user: test_user)
 end
 
 puts "Seeding Finished!"
