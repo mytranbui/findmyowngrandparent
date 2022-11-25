@@ -18,8 +18,10 @@
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
 body{
+  overflow-x: hidden;
   background-color: #f4f7c5;
 }
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -99,6 +101,34 @@ body{
 
 .details {
   text-align: center;
+}
+
+// login
+.left-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.right-container{
+  width: 50%;
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1545603343-8356d34ed7bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=660&q=80");
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.wrapper{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .button-container-center {

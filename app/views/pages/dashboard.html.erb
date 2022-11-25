@@ -25,9 +25,9 @@
       <% end %>
     <% end %>
   </div>
-
-  <div class="created-grandparents w-50">
-    <h2>My created Grandparents</h2>
+  <div class="row justify-content-between col-6">
+    <% unless @my_grandparents.empty?  %>
+      <h2>My created Grandparents</h2>
       <% @my_grandparents.each do |grandparent|%>
         <div class="card-dashboard my-5">
           <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
@@ -52,4 +52,5 @@
       <% end %>
     </div>
   </div>
+    <% end %>
 </div>
