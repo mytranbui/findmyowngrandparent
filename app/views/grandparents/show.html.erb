@@ -5,7 +5,11 @@
 
   <label class="form-control">
     <div>
-      <%= cl_image_tag @grandparent.photo.key, height: 400, width: 400, crop: :fill %>
+      <% if @grandparent.photo.attached?%>
+        <%= cl_image_tag @grandparent.photo.key, height: 400, width: 400, crop: :fill %>
+      <% else %>
+        <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
+      <% end %>
     </div>
     <p>AGE:<%= @grandparent.age %> </p>
     <p> DESCRIPTION:<%= @grandparent.description %> </p>
