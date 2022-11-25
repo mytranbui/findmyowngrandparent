@@ -5,7 +5,10 @@
   display: flex;
   align-items: center;
   transition: 0.8s;
-  width: 100%;
+  // width: 100%;
+  a {
+
+  }
 }
 
 .card-bookings:hover {
@@ -48,7 +51,10 @@
   display: flex;
   align-items: center;
   transition: 0.8s;
-  font-family: "Work Sans", "Helvetica", "sans-serif";
+  width: 170px;
+            margin: 10px 0;
+            background-color: white;
+            border: 1px solid;
 }
 
 .card-grandparents:hover {
@@ -56,8 +62,8 @@
 }
 
 .card-grandparents img {
-  height: 150px;
-  width: 267px;
+  // height: 150px;
+  // width: 267px;
   object-fit: cover;
 }
 
@@ -80,4 +86,54 @@
   // margin: 0 auto;
   text-align: left;
   // background-color: green;
+}
+
+
+//crds for dashboard-------------------------------------------------------------------------
+
+.card-dashboard {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  transition: 0.8s;
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  width: 100%;
+  border-radius: 25px;
+}
+
+.card-dashboard:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+.card-dashboard img {
+  height: 150px;
+  width: 267px;
+  object-fit: cover;
+}
+
+.card-dashboard h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-dashboard p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-dashboard .card-dashboard-infos {
+  padding: 16px;
+  // margin: 0 auto;
+  text-align: left;
+  // background-color: green;
+}
+
+.card-dashboard-infos {
+  width: 100%
 }
