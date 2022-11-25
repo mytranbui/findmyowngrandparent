@@ -2,7 +2,7 @@
 <div class="main-container">
   <div class="cards-container">
     <% @grandparents.each do |grandparent|%>
-      <%= link_to grandparent_path(@grandparents) do %>
+      <%= link_to grandparent_path(grandparent) do %>
         <div class="grandparents-card">
           <% if grandparent.photo.present? %>
             <%= cl_image_tag grandparent.photo.key, crop: :fill %>
