@@ -1,0 +1,25 @@
+.left-container-gp {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+.right-container-gp {
+  width: 50%;
+  background-image: url("https://images.unsplash.com/photo-1545603343-8356d34ed7bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=660&q=80");
+  background-position: center;
+  background-size: contain;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  max-height: 500px;
+  background-repeat: no-repeat;
+}
+
+.wrapper-gp {
+  display: flex;
+  height: 100vh;
+  overflow-x: hidden;
+}
