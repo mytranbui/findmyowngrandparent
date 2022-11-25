@@ -1,15 +1,15 @@
 <div>
   <div>
-    <h1><%= current_user.email.split("@")[0] %></h1>
+    <h1 class="centerd"><%= current_user.email %></h1>
   </div>
 </div>
 <div class="container">
   <div class="row justify-content-between col-6">
     <h2>My booked Grandparents</h2>
       <% current_user.grandparents.each do |grandparent|%>
-        <div class="card-bookings mt-5 col-lg-6">
+        <div class="card-dashboard mt-5 col-lg-6">
           <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
-          <div class="card-bookings-infos">
+          <div class="card-dashboard-infos">
             <h2>Name: <%= grandparent.name %></h2>
             <h2>Age: <%= grandparent.age %></h2>
             <h2>Description: <%= grandparent.description %></h2>
@@ -22,9 +22,9 @@
   <div class="row justify-content-between col-6">
     <h2>My created Grandparents</h2>
       <% @my_grandparents.each do |grandparent|%>
-        <div class="card-bookings mt-5 col-lg-6">
+        <div class="card-dashboard mt-5 col-lg-6">
           <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
-          <div class="card-bookings-infos">
+          <div class="card-dashboard-infos">
             <h2>Name: <%= grandparent.name %></h2>
             <h2>Age: <%= grandparent.age %></h2>
             <h2>Description: <%= grandparent.description %></h2>
@@ -41,4 +41,3 @@
       <% end %>
   </div>
 </div>
-<a class="btn btn-ghost clickbutton" href="/grandparents"> Go Back!</a>

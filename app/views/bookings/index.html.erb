@@ -1,4 +1,4 @@
-<div class="container m-5">
+<div class=" m-5 centered">
 <h2>My bookings</h2>
   <% current_user.bookings.each do |booking| %>
     <div class="card-bookings m-5">
@@ -11,15 +11,17 @@
         <h2>Till: <%= booking.end_date.strftime("%d.%m.%Y") %></h2>
         <%=
           link_to "Delete",
-          booking_path(booking),
+          booking_path(booking), class: "btn clickbutton",
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
         %>
         <%=
           link_to "Edit",
-          edit_grandparent_booking_path(booking.grandparent, booking)
+          edit_grandparent_booking_path(booking.grandparent, booking), class: "btn clickbutton"
         %>
       </div>
     </div>
   <% end %>
 </div>
-<a class="btn btn-ghost clickbutton" href="/grandparents"> Go Back!</a>
+<div class="centered">
+  <a class="btn clickbutton" href="/grandparents"> Go Back!</a>
+</div>
