@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :grandparents do
-    resources :bookings, only: [:new, :create, :edit, :update]
+    resources :bookings, only: [:new, :create, :update]
   end
-  resources :bookings, only: [:destroy, :index]
+  resources :bookings, only: [:sedit, :destroy, :index]
   get "dashboard", to: "pages#dashboard", as: :dashboard
 end
