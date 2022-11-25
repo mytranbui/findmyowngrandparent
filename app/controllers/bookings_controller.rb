@@ -19,20 +19,7 @@ class BookingsController < ApplicationController
     @booking.grandparent = @grandparent
     @booking.user = current_user
     if @booking.save!
-      redirect_to bookings_path(current_user)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
-  def edit
-  end
-
-  # PATH /grandparents/:id
-  def update
-    @booking.update(booking_params)
-    if @booking.save
-      redirect_to bookings_path(current_user)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
