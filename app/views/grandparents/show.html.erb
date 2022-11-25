@@ -10,12 +10,12 @@
       <% end %>
       </a>
     </div>
-    <h2><%= @grandparent.name %></h2>
-    <p><%= @grandparent.age %> years old</p>
-    <p><%= @grandparent.address %> </p>
-    <br>
+    <div class="show-text">
+    <h2> <mark><%= @grandparent.name %> </mark></h2>
+    <p> <%= @grandparent.age%> <sub> years old </sub> </p>
+    <p> <%= @grandparent.address %>  </p>
     <p><%= @grandparent.description %> </p>
-
+</div>
   <% if @grandparent.user != current_user %>
   <p><%= "Do you want to book #{@grandparent.name}?" %> </p>
   <br>

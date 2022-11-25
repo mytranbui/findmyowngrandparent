@@ -1,39 +1,26 @@
-<div class="container d-flex justify-content-around gap-3">
+<div class="container d-flex justify-content-around gap-3  mt-5">
   <div class="booked-grandparents w-50">
     <% unless current_user.grandparents.empty? %>
-    <br><br>
-      <h2>My bookings</h2>
-      <% current_user.grandparents.each do |grandparent|%>
+
+      <h2>My Grandparents</h2>
+      <% @my_grandparents.each do |grandparent|%>
+       <%= link_to grandparent_path(grandparent) do %>
         <div class="card-dashboard my-5">
-          <div>
-            <% if grandparent.photo.attached?%>
-              <%= cl_image_tag grandparent.photo.key, height: 400, width: 400, crop: :fill %>
-            <% else %>
-              <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
-            <% end %>
+          <% if grandparent.photo.attached? %>
+            <%= cl_image_tag grandparent.photo.key, crop: :fill %>
+          <% else %>
+            <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
+          <% end %>
+            <div class="grandparents-card-content">
+              <h2><%= grandparent.name %></h2>
+              <h2><%= grandparent.age %> years old</h2>
           </div>
-          <div class="card-dashboard-infos">
-            <h2><%= grandparent.name %></h2>
-            <h2><%= grandparent.age %> years old</h2>
-            <h2>From: <%= grandparent.booking.start_date.strftime("%d.%m.%Y") %></h2>
-            <h2>Till: <%= grandparent.booking.end_date.strftime("%d.%m.%Y") %></h2>
-            <br>
-            <%=
-              link_to "Delete",
+            <%= link_to "Delete",
               grandparent_path(grandparent), class: "btn clickbutton",
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
             %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="row justify-content-between col-6">
-    <% unless @my_grandparents.empty?  %>
-    <br><br>
-      <h2>My Grandparents</h2>
-      <% @my_grandparents.each do |grandparent|%>
-        <div class="card-dashboard my-5">
+            <%= link_to "Edit",  edit_grandparent_path(grandparent) %>
+          <% end %>
           <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
           <div class="card-dashboard-infos">
             <h2><%= grandparent.name %></h2>
