@@ -1,31 +1,31 @@
 <%# <h1>Grandparents</h1> %>
-<div class="container">
-  <div class="row justify-content-between">
-      <% @grandparents.each do |grandparent|%>
-        <%# <% if grandparent.user == current_user %>
-        <div class="card-grandparents col-6 mt-5">
-        <% if grandparent.photo.present? %>
-          <%= cl_image_tag grandparent.photo.key, height: 400, width: 400, crop: :fill %>
-        <% else %>
-          <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
-        <% end %>
-          <div class="card-grandparents-infos">
-            <h2>Name: <%= grandparent.name %></h2>
-            <h2>Age: <%= grandparent.age %> years old</h2>
-            <h2>Description: <%= grandparent.description %></h2>
-            <h2>Address: <%= grandparent.address %></h2>
-            <br>
-            <%= link_to "See more", grandparent_path(grandparent), class: "clickbutton-grandparents-index", style: "text-decoration: none" %>
-            <br>
-            <%= link_to "Book", new_grandparent_booking_path(grandparent), class: "clickbutton-grandparents-index", style: "text-decoration: none" %>
+<div class="main-container">
+  <div class="cards-container">
+    <% @grandparents.each do |grandparent|%>
+      <%= link_to grandparent_path(@grandparents) do %>
+        <div class="grandparents-card">
+          <% if grandparent.photo.present? %>
+            <%= cl_image_tag grandparent.photo.key, crop: :fill %>
+          <% else %>
+            <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
+          <% end %>
+          <div class="grandparents-card-content">
+            <h2><%= grandparent.name %></h2>
+            <h2><%= grandparent.age %> years old</h2>
+            <%# <h2>Description: <%= grandparent.description %>
+            <%# <h2>Address: <%= grandparent.address %>
+            <%# <%= link_to "Book", new_grandparent_booking_path(grandparent), class: "clickbutton-grandparents-index", style: "text-decoration: none" %>
           </div>
         </div>
       <% end %>
+    <% end %>
   </div>
-  <a class="btn btn-ghost clickbutton" href="/home"> Back Home</a>
-  <div style="width: 100%; height: 600px;"
+  <%# <a class="btn btn-ghost clickbutton" href="/home"> Back Home</a> %>
+  <div id="map"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+
+<%= link_to "Back Home", root_path, class:"btn btn-ghost back-home-btn" %>
