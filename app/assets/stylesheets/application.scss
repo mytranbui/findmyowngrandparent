@@ -16,6 +16,9 @@
 
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
+body{
+  background-color: #f4f7c5;
+}
 .card-category {
   background-size: cover;
   background-position: center;
@@ -72,9 +75,9 @@
     margin: 5px;
     color: black !important;
     background-color: #d0d0f7;
-    border: 1px solid blue;
+    border: 1px solid #C2B280;
     border-radius: 5px;
-    box-shadow: 1px 1px 2px 1px blue;
+    box-shadow: 1px 1px 2px 1px #C2B280;
     display: inline-block;
     width: 70%;
     padding: 5px;
@@ -85,8 +88,12 @@
 }
 
 .clickbutton-grandparents-index:hover {
-  background-color: green;
-  color: white !important;
+  background-color:#FAF9F6;
+  color: rgb(255, 255, 255) !important;
+}
+
+.padding-bottom {
+  padding-bottom: 100px;
 }
 
 .details {
