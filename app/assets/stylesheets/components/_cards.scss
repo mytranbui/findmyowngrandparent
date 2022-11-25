@@ -96,6 +96,8 @@
   align-items: center;
   transition: 0.8s;
   font-family: "Work Sans", "Helvetica", "sans-serif";
+  width: 100%;
+  border-radius: 25px;
 }
 
 .card-dashboard:hover {
@@ -127,4 +129,8 @@
   // margin: 0 auto;
   text-align: left;
   // background-color: green;
+}
+
+.card-dashboard-infos {
+  width: 100%
 }
