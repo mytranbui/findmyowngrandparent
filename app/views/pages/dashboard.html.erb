@@ -1,4 +1,4 @@
-<div class="container d-flex justify-content-around gap-3">
+<div class="container d-flex justify-content-around gap-3" style="margin-top: 80px" >
   <div class="booked-grandparents w-50">
     <% unless current_user.grandparents.empty? %>
       <h2>My booked Grandparents</h2>
@@ -25,6 +25,7 @@
       <% end %>
     <% end %>
   </div>
+
   <div class="row justify-content-between col-6">
     <% unless @my_grandparents.empty?  %>
       <h2>My created Grandparents</h2>
