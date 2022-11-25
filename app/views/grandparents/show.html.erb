@@ -9,7 +9,11 @@
 
   <label class="form-control centered">
     <div>
-      <%= cl_image_tag @grandparent.photo.key, height: 400, width: 400, crop: :fill %>
+      <% if @grandparent.photo.attached?%>
+        <%= cl_image_tag @grandparent.photo.key, height: 400, width: 400, crop: :fill %>
+      <% else %>
+        <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
+      <% end %>
     </div>
     <br>
     <br>
