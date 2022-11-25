@@ -1,9 +1,13 @@
 <div class="container mt-5">
-
+<div class="button-container-center">
+  <%= link_to "Back", grandparents_path, :class => "btn clickbutton" %>
+</div>
+<br>
+<br>
 <h2><%= @grandparent.name %></h2>
 <br>
 
-  <label class="form-control">
+  <label class="form-control centered">
     <div>
       <% if @grandparent.photo.attached?%>
         <%= cl_image_tag @grandparent.photo.key, height: 400, width: 400, crop: :fill %>
@@ -11,27 +15,35 @@
         <img src="https://imgflip.com/s/meme/Grandma-Finds-The-Internet.jpg" />
       <% end %>
     </div>
-    <p>AGE:<%= @grandparent.age %> </p>
-    <p> DESCRIPTION:<%= @grandparent.description %> </p>
-    <p> ADDRESS:<%= @grandparent.address %> </p>
+    <br>
+    <br>
+    <div class="details">
+      <h4>AGE</h4>
+      <%= @grandparent.age %>
+      <br>
+      <br>
+      <h4> DESCRIPTION</h4>
+      <%= @grandparent.description %>
+      <br>
+      <br>
+      <h4> ADDRESS </h4>
+      <%= @grandparent.address %>
+      <br>
+      <br>
+    </div>
 <%# <div class="red-text"><%= link_to "Remove",bookmark_path(bookmark),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}</div> %>
   </label>
 
 <% if @grandparent.user != current_user %>
-<p><%= "Do you want to book #{@grandparent.name}?" %> </p>
+
 <br>
-<p> Then </p>
-<%= link_to " Book", new_grandparent_booking_path(@grandparent), :class => "btn clickbutton fas fa-heart"%>
-<% end %>
-<br>
-<p>see other gramps and grannys: </p>
-<%= link_to "Back", grandparents_path, :class => "btn clickbutton" %>
-<br>
-<%= link_to "My bookings", bookings_path(@booking), :class => "btn clickbutton" %>
-<% if @grandparent.user == current_user %>
-<%= link_to "Destroy", grandparent_path(@grandparent),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger" %> /
-<%= link_to "Edit", edit_grandparent_path, :class => "btn clickbutton" %>
-<% end %>
-<br>
-<%= link_to "Home", root_path, :class => "btn clickbutton" %>
+<div class="button-container-center">
+  <%= link_to " Book", new_grandparent_booking_path(@grandparent), :class => "btn clickbutton"%>
+  <% end %>
+  <%= link_to "My bookings", bookings_path(@booking), :class => "btn clickbutton" %>
+  <% if @grandparent.user == current_user %>
+  <%= link_to "Destroy", grandparent_path(@grandparent),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger" %> /
+  <%= link_to "Edit", edit_grandparent_path, :class => "btn clickbutton" %>
+  <% end %>
+  <%= link_to "Home", root_path, :class => "btn clickbutton" %>
 </div>
