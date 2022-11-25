@@ -1,7 +1,6 @@
 <div class="container mt-5">
-
-<%= link_to "Back", grandparents_path, :class => "btn clickbutton" %>
-<br>
+  <%= link_to "Back", grandparents_path, :class => "btn clickbutton" %>
+  <br>
     <div class="polaroid">
       <a href="#">
       <% if @grandparent.photo.attached?%>
@@ -13,19 +12,19 @@
     </div>
     <h2><%= @grandparent.name %></h2>
     <p><%= @grandparent.age %> years old</p>
-    <p> ADDRESS:<%= @grandparent.address %> </p>
+    <p><%= @grandparent.address %> </p>
+    <br>
     <p><%= @grandparent.description %> </p>
 
-<% if @grandparent.user != current_user %>
-<p><%= "Do you want to book #{@grandparent.name}?" %> </p>
-<br>
-<p> Then </p>
-<%= link_to " Book", new_grandparent_booking_path(@grandparent), :class => "btn clickbutton fas fa-heart"%>
-<% end %>
-<br>
-<br>
-<% if @grandparent.user == current_user %>
-<%= link_to "Edit", edit_grandparent_path, :class => "btn clickbutton" %>
-<%= link_to "Delete", grandparent_path(@grandparent),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn clickbutton" %>
-<% end %>
+  <% if @grandparent.user != current_user %>
+  <p><%= "Do you want to book #{@grandparent.name}?" %> </p>
+  <br>
+  <%= link_to " Book", new_grandparent_booking_path(@grandparent), :class => "btn clickbutton fas fa-heart"%>
+  <% end %>
+  <br>
+  <br>
+  <% if @grandparent.user == current_user %>
+  <%= link_to "Edit", edit_grandparent_path, :class => "btn clickbutton" %>
+  <%= link_to "Delete", grandparent_path(@grandparent),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn clickbutton" %>
+  <% end %>
 </div>
